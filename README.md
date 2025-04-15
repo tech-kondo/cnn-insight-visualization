@@ -1,6 +1,6 @@
 # CNN Feature Evolution & Layer Visualization
 
-![自動生成カーネルの畳み込み可視化](/assets/inu_tf_auto_kernel.png)
+![自動生成カーネルの畳み込み可視化](/assets/inu_tf_auto_kernel_c.png)
 
 このリポジトリは、畳み込みニューラルネットワーク（CNN）の仕組みを視覚的に理解するために、
 **各レイヤー（Conv, Pooling, Flatten, Dense）や学習前後の変化**を可視化・比較した学習用プロジェクトです。
