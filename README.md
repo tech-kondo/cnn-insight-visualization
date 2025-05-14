@@ -25,6 +25,7 @@
 
 ## 📁 ディレクトリ構成  
 
+```text
 cnn-insight-visualization/  
 ├──────── README.md  # このファイル  
 ├──────── assets/  # 可視化のピクチャフォルダ  
