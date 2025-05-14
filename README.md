@@ -14,8 +14,12 @@
 -TensorFlowのConv2Dの自動生成カーネルで畳み込みを行い1との特徴マップの違いを比較  
 -TensorFlowのConv2Dの自動生成カーネルの形状を可視化  
 02. プーリング層での情報圧縮の様子を確認する  
-（未）03. Flatten → Dense層での構造変化を確認する  
-（未）04. CNNの学習によって**フィルターがどのように変化するか**を比較する  
+03. Flatten → Dense層での構造変化を確認する  
+-Flatten後、Dense後のそれぞれのデータのshapeを確認しグラフで可視化  
+04. CNNの学習によって**フィルターがどのように変化するか**を比較する  
+-犬の分類CNNモデルを学習(2クラス、犬種別)  
+-学習前のランダムな重みから出力される特徴マップと学習した重みから出力される特徴マップを可視化  
+-学習前と学習後の特徴マップの差分をヒートマップで可視化  
 
 ---  
 
@@ -63,6 +67,7 @@ cnn-insight-visualization/
 │        └──── data_resize.ipynb # 画像データをリサイズするプログラム   
 └── scripts/  # ローカルから実行できるpythonスクリプト（を今後追加予定）  
 └── requirements.txt # 使用ライブラリ  
+```  
 ---  
 
 ## 🎨 含まれる可視化例（一部紹介）  
@@ -91,4 +96,3 @@ cnn-insight-visualization/
 
 1. `requirements.txt` に記載された環境を整える（TensorFlow, matplotlib, OpenCVなど）  
 2. 各ノートブック（`notebooks/`）をGoogle Colabなどで順番に実行してください  
-
