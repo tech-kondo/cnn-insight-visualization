@@ -27,7 +27,10 @@ cnn-insight-visualization/
 ├────── data/  
 │  ├─ input/ # 入力画像  
 │  │       ├──inu_color_256.jpg      # 入力画像（カラー画像）  
-│  │       └── inu_grayscale_256.jpg              # 入力画像（グレースケール画像）  
+│  │       ├── inu_grayscale_256.jpg              # 入力画像（グレースケール画像）  
+│  │       ├──bubu_256_1.jpg         # 犬の写真１  
+│  │       └──bubu_256_2.jpg         # 犬の写真２ 
+│  ├─ collection/ # webスクレイピングによって取得した画像（中には画像データも含む。gitには載せない）   
 │  ├────kernels/   # 3*3のカーネルを視覚化のため100倍に拡大した画像  
 │  │     ├─ self_made      # 自作カーネル画像  
 │  │     │     ├── my_kernel_ Vertical_Edge.png      # 左から右へ縦のエッジを強調カーネル  
@@ -48,12 +51,16 @@ cnn-insight-visualization/
 │             └── conv_pooling # 畳み込み→プーリング処理後の特徴量マップ  
 │                ├── 0_feature_map_conv_pooled_0_color.png & gray.png   # カラー画像とグレースケール画像  
 │                └── …_feature_map_conv_pooled_..._color.png & gray.png  
-├──── notebooks/
+├──── model/ # モデル  
+│        ├────cnn_french_dachs_2class.keras        #ダックスフントとフレンチブルドッグの2クラス画像分類モデル   
+│        └────cnn_french_dachs_2class.weights.h5   #同じモデル名のモデルの重み  
+├──── notebooks/  
 │        ├──── 01_manual_filters.ipynb # 自作カーネル・Conv2D層それぞれの畳み込み処理の出力を可視化  
 │        ├──── 02_pooling__visualization.ipynb # プーリング層の出力可視化  
-│        ├──── （空）03_flatten_dense_layer.ipynb # Flatten → Dense構造の確認  
-│        ├──── （空）04_feature_map_evolution.ipynb # 学習前 と 学習後の特徴マップを比較  
-│        └── （空）05_summary.ipynb # 各ステップまとめ  
+│        ├──── 03_flatten_dense_layer.ipynb # Flatten → Dense構造の確認  
+│        ├──── 04_feature_map_evolution.ipynb # 学習前 と 学習後の特徴マップを比較  
+│        ├──── data_collection_scraping.ipynb # ネットから特定の画像データを取得するwebスクレイピング  
+│        └──── data_resize.ipynb # 画像データをリサイズするプログラム   
 └── scripts/  # ローカルから実行できるpythonスクリプト（を今後追加予定）  
 └── requirements.txt # 使用ライブラリ  
 ---  
@@ -63,7 +70,7 @@ cnn-insight-visualization/
 - **自作エッジフィルター（垂直・水平・斜め）による特徴検出**  
 - **TensorFlow自動生成フィルターによる畳み込み出力**  
 - **MaxPooling処理前後の比較**  
-（未）- **学習前後でのフィルター出力の進化（feature evolution）**  
+- **学習前後でのフィルター出力の進化（feature evolution）**  
 
 ---  
 
@@ -84,3 +91,4 @@ cnn-insight-visualization/
 
 1. `requirements.txt` に記載された環境を整える（TensorFlow, matplotlib, OpenCVなど）  
 2. 各ノートブック（`notebooks/`）をGoogle Colabなどで順番に実行してください  
+
